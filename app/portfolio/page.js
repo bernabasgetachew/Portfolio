@@ -4,18 +4,23 @@ import Image from 'next/image';
 
 export default function Portfolio() {
   return (
-    <div className="bg-gradient-to-r from-black to-gray-800 text-white min-h-screen p-8">
-      <main className="max-w-7xl mx-auto">
+    <div className="bg-gradient-to-r from-black to-gray-800 text-white min-h-screen px-4 sm:px-8">
+      <main className="max-w-7xl mx-auto p-6 sm:p-8 pt-24 mt-20">
         {/* Portfolio Title Section */}
-        <section className="text-center mb-12">
-          <h1 className="text-5xl font-extrabold text-white mb-6">My Portfolio</h1>
-          <p className="text-xl text-gray-200 italic">
-            A collection of projects that showcase my skills and creativity.
+        <section className="text-center mb-8 sm:mb-12">
+          <h1 className="text-4xl sm:text-5xl font-extrabold mb-4">My Portfolio</h1>
+          <p className="text-lg sm:text-xl text-gray-200 italic">
+            <b>A collection of projects that showcase my skills and creativity.</b>
+          </p>
+        </section>
+        <section className="text-center mb-8">
+          <p className="text-lg sm:text-xl text-gray-200 italic">
+            <b>Clicking on the image leads to the GitHub repository.</b>
           </p>
         </section>
 
         {/* Projects Section */}
-        <section className="grid grid-cols-1 md:grid-cols-3 gap-12">
+        <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {/* Project 1: E-Commerce App */}
           <div
             className="relative group cursor-pointer"
@@ -29,58 +34,55 @@ export default function Portfolio() {
               className="rounded-lg shadow-lg transform transition duration-300 hover:scale-105"
             />
             <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 flex items-center justify-center">
-              <span className="text-white text-2xl font-bold">E-Commerce App</span>
+              <span className="text-white text-xl sm:text-2xl font-bold">E-Commerce App</span>
             </div>
           </div>
 
           {/* Project 2: Hotel Management App */}
           <div
             className="relative group cursor-pointer"
-            
           >
             <Image
               src="/hotel.jpg" // Replace with your image path
-              alt="Hotel Management App"
+              alt="Hotel Booking App"
               width={400}
               height={300}
               className="rounded-lg shadow-lg transform transition duration-300 hover:scale-105"
             />
             <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 flex items-center justify-center">
-              <span className="text-white text-2xl font-bold">Hotel Management App</span>
+              <span className="text-white text-xl sm:text-2xl font-bold">Hotel Booking App</span>
             </div>
           </div>
 
-          {/* Project 3: Add another project here */}
+          {/* Project 3 */}
           <div
             className="relative group cursor-pointer"
-            
           >
             <Image
               src="/hospital.jpg" // Replace with your image path
-              alt="Project 3"
+              alt="Hospital Management"
               width={400}
               height={300}
               className="rounded-lg shadow-lg transform transition duration-300 hover:scale-105"
             />
             <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 flex items-center justify-center">
-              <span className="text-white text-2xl font-bold">Project 3</span>
+              <span className="text-white text-xl sm:text-2xl font-bold">Hospital Management</span>
             </div>
           </div>
 
-          {/* Project 4: Add another project here */}
+          {/* Project 4 */}
           <div
             className="relative group cursor-pointer"
-           
           >
             <Image
-              src="/project4.jpg" // Replace with your image path
-              alt="Project 4"
+              src="/Cinema.jpg" // Replace with your image path
+              alt="Cinema Ticketing"
               width={400}
               height={300}
               className="rounded-lg shadow-lg transform transition duration-300 hover:scale-105"
             />
             <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 flex items-center justify-center">
-              <span className="text-white text-2xl font-bold">Project 4</span>
+              <span className="text-white text-xl sm:text-2xl font-bold">Cinema Ticketing</span>
             </div>
           </div>
         </section>

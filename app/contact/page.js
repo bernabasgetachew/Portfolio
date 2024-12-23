@@ -1,71 +1,74 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useRef } from 'react';
+import emailjs from '@emailjs/browser';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
-    fullName: '',
+    name: '',
     email: '',
     message: '',
   });
 
-  const [status, setStatus] = useState('');
+  const form = useRef();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = async (e) => {
+  const sendEmail = (e) => {
     e.preventDefault();
 
-    try {
-      const response = await fetch('/api/send-email', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
-      });
-
-      if (response.ok) {
-        setStatus('Message sent successfully!');
-        setFormData({ fullName: '', email: '', message: '' });
-      } else {
-        setStatus('Failed to send the message. Please try again.');
-      }
-    } catch (error) {
-      setStatus('An error occurred. Please try again later.');
-    }
+    emailjs
+      .sendForm(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
+        form.current,
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
+      )
+      .then(
+        () => {
+          alert('Message sent successfully! I will get back to you shortly.');
+          setFormData({ name: '', email: '', message: '' });
+        },
+        (error) => {
+          alert(`Failed to send the message. Please try again later. Error: ${error.text}`);
+        }
+      );
   };
 
   return (
-    <div className="bg-gradient-to-r from-black to-gray-800 text-white min-h-screen p-8">
-      <main className="max-w-7xl mx-auto">
-        <section className="text-center mb-12">
-          <h1 className="text-5xl font-extrabold text-white mb-6">Contact Me</h1>
-          <p className="text-xl text-gray-200 italic">
+    <div className="bg-gradient-to-r from-black to-gray-800 text-white min-h-screen px-4 sm:px-8">
+      <main className="max-w-7xl mx-auto p-6 sm:p-8 pt-24 mt-20">
+        {/* Header Section */}
+        <section className="text-center mb-8 sm:mb-12">
+          <h1 className="text-4xl sm:text-5xl font-extrabold mb-4">Contact Me</h1>
+          <p className="text-lg sm:text-xl text-gray-300 italic">
             I'd love to hear from you! Feel free to reach out with any questions or comments.
           </p>
         </section>
 
-        <section className="bg-gray-900 p-8 rounded-lg shadow-lg">
-          <form onSubmit={handleSubmit} className="space-y-6">
+        {/* Form Section */}
+        <section className="bg-gray-900 p-6 sm:p-8 rounded-lg shadow-lg">
+          <form ref={form} onSubmit={sendEmail} className="space-y-6">
             <div>
-              <label className="block text-gray-300 text-sm mb-2" htmlFor="fullName">
+              <label className="block text-gray-300 text-sm sm:text-base mb-2" htmlFor="name">
                 Full Name
               </label>
               <input
                 type="text"
-                id="fullName"
-                name="fullName"
-                value={formData.fullName}
+                id="name"
+                name="name"
+                value={formData.name}
                 onChange={handleChange}
-                className="w-full p-3 rounded-lg bg-gray-800 text-white border border-gray-700 focus:outline-none focus:ring focus:ring-yellow-500"
+                className="w-full p-3 sm:p-4 rounded-lg bg-gray-800 text-white border border-gray-700 focus:outline-none focus:ring focus:ring-yellow-500"
                 required
               />
             </div>
 
             <div>
-              <label className="block text-gray-300 text-sm mb-2" htmlFor="email">
+              <label className="block text-gray-300 text-sm sm:text-base mb-2" htmlFor="email">
                 Email
               </label>
               <input
@@ -74,13 +77,13 @@ export default function Contact() {
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
-                className="w-full p-3 rounded-lg bg-gray-800 text-white border border-gray-700 focus:outline-none focus:ring focus:ring-yellow-500"
+                className="w-full p-3 sm:p-4 rounded-lg bg-gray-800 text-white border border-gray-700 focus:outline-none focus:ring focus:ring-yellow-500"
                 required
               />
             </div>
 
             <div>
-              <label className="block text-gray-300 text-sm mb-2" htmlFor="message">
+              <label className="block text-gray-300 text-sm sm:text-base mb-2" htmlFor="message">
                 Message
               </label>
               <textarea
@@ -88,7 +91,7 @@ export default function Contact() {
                 name="message"
                 value={formData.message}
                 onChange={handleChange}
-                className="w-full p-3 rounded-lg bg-gray-800 text-white border border-gray-700 focus:outline-none focus:ring focus:ring-yellow-500"
+                className="w-full p-3 sm:p-4 rounded-lg bg-gray-800 text-white border border-gray-700 focus:outline-none focus:ring focus:ring-yellow-500"
                 rows="5"
                 required
               ></textarea>
@@ -100,12 +103,6 @@ export default function Contact() {
             >
               Send Message
             </button>
-
-            {status && (
-              <p className={`mt-4 text-sm ${status.startsWith('Message') ? 'text-green-400' : 'text-red-400'}`}>
-                {status}
-              </p>
-            )}
           </form>
         </section>
       </main>
