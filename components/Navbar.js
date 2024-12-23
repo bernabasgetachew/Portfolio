@@ -72,7 +72,7 @@ export default function Navbar() {
         {[{ name: 'Home', path: '/' }, { name: 'About', path: '/about' }, { name: 'Resume', path: '/resume' }, { name: 'Portfolio', path: '/portfolio' }, { name: 'Contact', path: '/contact' }].map((link) => (
           <Link key={link.name} href={link.path} passHref>
             <span
-              className={`cursor-pointer text-white hover:text-gray-400 hover:underline 
+              className={`cursor-pointer text-white mr-1 hover:text-gray-400 hover:underline 
               ${pathname === link.path ? 'underline text-gray-500' : 'text-white'}`}
             >
               {link.name}
