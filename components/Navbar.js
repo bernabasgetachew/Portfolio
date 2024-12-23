@@ -2,9 +2,15 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { useState } from 'react';
 
 export default function Navbar() {
   const pathname = usePathname();
+  const [isMenuOpen, setIsMenuOpen] = useState(false); // State to toggle the mobile menu
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen); // Toggle menu visibility
+  };
 
   return (
     <nav
@@ -17,12 +23,15 @@ export default function Navbar() {
 
       {/* Mobile Menu Button */}
       <div className="lg:hidden flex items-center space-x-2">
-        <button className="text-white focus:outline-none">
+        <button
+          className="text-white focus:outline-none"
+          onClick={toggleMenu} // Toggle the menu on click
+        >
           <img src="/menu-icon.png" alt="Menu" className="w-6 h-6" />
         </button>
       </div>
 
-      {/* Navigation Links and Social Icons */}
+      {/* Navigation Links and Social Icons for Desktop */}
       <div className="hidden lg:flex items-center space-x-8">
         {[{ name: 'Home', path: '/' }, { name: 'About', path: '/about' }, { name: 'Resume', path: '/resume' }, { name: 'Portfolio', path: '/portfolio' }, { name: 'Contact', path: '/contact' }].map((link) => (
           <Link key={link.name} href={link.path} passHref>
@@ -62,7 +71,7 @@ export default function Navbar() {
       </div>
 
       {/* Mobile Menu Links */}
-      <div className="lg:hidden absolute top-16 left-0 w-full bg-black bg-opacity-90 text-white space-y-4 p-6">
+      <div className={`lg:hidden absolute top-16 left-0 w-full bg-black bg-opacity-90 text-white space-y-4 p-6 ${isMenuOpen ? 'block' : 'hidden'}`}>
         {[{ name: 'Home', path: '/' }, { name: 'About', path: '/about' }, { name: 'Resume', path: '/resume' }, { name: 'Portfolio', path: '/portfolio' }, { name: 'Contact', path: '/contact' }]
           .map((link) => (
             <Link key={link.name} href={link.path} passHref>
