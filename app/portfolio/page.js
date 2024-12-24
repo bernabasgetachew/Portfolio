@@ -14,75 +14,77 @@ export default function Portfolio() {
           </p>
         </section>
         <section className="text-center mb-8">
-          <p className="text-lg sm:text-xl text-gray-200 italic">
-            <b>Clicking on the image leads to the GitHub repository.</b>
-          </p>
+        <p className="text-lg sm:text-xl text-gray-200 italic text-center bg-gray-900 p-4 sm:p-6 rounded-lg shadow-lg max-w-3xl mx-auto">
+          <b>"Click on the <span className="text-blue-500">E-commerce</span> and{' '}
+          <span className="text-blue-500">Hotel-Booking</span> images to explore the GitHub repositories. The other two are collaborative school projects with my talented teammates!"
+          </b>
+        </p>
+
         </section>
 
         {/* Projects Section */}
         <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {/* Project 1: E-Commerce App */}
-          <div
-            className="relative group cursor-pointer"
-            onClick={() => window.open('https://github.com/bernabasgetachew/E-commerce-website.git', '_blank')}
-          >
-            <Image
-              src="/e-commerce.png" // Replace with your image path
-              alt="E-Commerce App"
-              width={400}
-              height={300}
-              className="rounded-lg shadow-lg transform transition duration-300 hover:scale-105"
-            />
-            <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 flex items-center justify-center">
+          <div className="relative flex flex-col items-center justify-center overflow-hidden">
+            <a href="https://github.com/bernabasgetachew/E-commerce-website.git" target="_blank" rel="noopener noreferrer">
+              <Image
+                src="/e-commerce.webp" // Replace with your image path
+                alt="E-Commerce App"
+                width={400}
+                height={300}
+                className="rounded-lg shadow-lg transform transition-transform duration-500 hover:scale-110 hover:translate-x-4 hover:translate-y-4"
+              />
+            </a>
+            <div className="mt-4 text-center">
               <span className="text-white text-xl sm:text-2xl font-bold">E-Commerce App</span>
             </div>
           </div>
 
           {/* Project 2: Hotel Management App */}
-          <div
-            className="relative group cursor-pointer"
-          >
-            <Image
-              src="/hotel.jpg" // Replace with your image path
-              alt="Hotel Booking App"
-              width={400}
-              height={300}
-              className="rounded-lg shadow-lg transform transition duration-300 hover:scale-105"
-            />
-            <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 flex items-center justify-center">
-              <span className="text-white text-xl sm:text-2xl font-bold">Hotel Booking App</span>
+          <div className="relative flex flex-col items-center justify-center overflow-hidden">
+            <a href="https://github.com/bernabasgetachew/Hotel-Booking.git" target="_blank" rel="noopener noreferrer">
+              <Image
+                src="/hotel.webp" // Replace with your image path
+                alt="Hotel Booking App"
+                width={400}
+                height={500} // Adjusted height for proper alignment
+                className="rounded-lg shadow-lg transform transition-transform duration-500 hover:scale-110 hover:translate-x-4 hover:translate-y-4"
+              />
+            </a>
+            <div className="mt-4 text-center">
+              <span className="text-white text-xl sm:text-2xl font-bold">Hotel Booking website</span>
             </div>
           </div>
 
-          {/* Project 3 */}
-          <div
-            className="relative group cursor-pointer"
-          >
-            <Image
-              src="/hospital.jpg" // Replace with your image path
-              alt="Hospital Management"
-              width={400}
-              height={300}
-              className="rounded-lg shadow-lg transform transition duration-300 hover:scale-105"
-            />
-            <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 flex items-center justify-center">
+          {/* Project 3: Hospital Management */}
+          <div className="relative flex flex-col items-center justify-center overflow-hidden">
+            
+              <Image
+                src="/hospital_management.jpg" // Replace with your image path
+                alt="Hospital Management"
+                width={400}
+                height={300}
+                className="rounded-lg shadow-lg transform transition-transform duration-500 hover:scale-110 hover:translate-x-4 hover:translate-y-4"
+              />
+            
+            <div className="mt-4 text-center">
               <span className="text-white text-xl sm:text-2xl font-bold">Hospital Management</span>
             </div>
           </div>
 
-          {/* Project 4 */}
-          <div
-            className="relative group cursor-pointer"
-          >
-            <Image
-              src="/Cinema.jpg" // Replace with your image path
-              alt="Cinema Ticketing"
-              width={400}
-              height={300}
-              className="rounded-lg shadow-lg transform transition duration-300 hover:scale-105"
-            />
-            <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 flex items-center justify-center">
-              <span className="text-white text-xl sm:text-2xl font-bold">Cinema Ticketing</span>
+          {/* Project 4: Social Event Planner */}
+          <div className="relative flex flex-col items-center justify-center overflow-hidden">
+            
+              <Image
+                src="/event planner.webp" // Replace with your image path
+                alt="Social Event Planner"
+                width={400}
+                height={300}
+                className="rounded-lg shadow-lg transform transition-transform duration-500 hover:scale-110 hover:translate-x-4 hover:translate-y-4"
+              />
+            
+            <div className="mt-4 text-center">
+              <span className="text-white text-xl sm:text-2xl font-bold">Social Event Planner</span>
             </div>
           </div>
         </section>

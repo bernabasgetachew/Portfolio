@@ -62,12 +62,12 @@ export default function Navbar() {
 
       {/* Mobile Sidebar */}
       {isMenuOpen && (
-        <div className="fixed top-0 right-0 h-full w-3/4 bg-gray-800 border-r border-gray-700 text-white p-6 z-50 shadow-lg">
+        <div className="fixed top-0 right-0 h-full w-3/4 bg-gray-800 bg-opacity-90 border-r border-gray-700 text-white p-6 z-50 shadow-lg">
           <button
             className="absolute top-4 right-4 text-white focus:outline-none"
             onClick={() => setIsMenuOpen(false)}
           >
-            <img src="/close-icon.gif" alt="Close" className="w-6 h-6" />
+            <img src="/close-icon.png" alt="Close" className="w-6 h-6" />
           </button>
 
           {/* Navigation Links */}
