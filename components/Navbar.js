@@ -13,7 +13,7 @@ export default function Navbar() {
       className={`flex justify-between items-center p-4 bg-black ${pathname === '/' ? 'bg-opacity-15' : 'bg-opacity-70'} text-white shadow-lg fixed top-0 w-full z-50 py-6`}
     >
       {/* Name */}
-      <div className="text-3xl font-extrabold text-gray-400">
+      <div className="text-3xl font-extrabold text-gray-400 tracking-wide">
         Bernabas Getachew
       </div>
 
@@ -28,11 +28,11 @@ export default function Navbar() {
       </div>
 
       {/* Navigation Links for Desktop */}
-      <div className="hidden lg:flex items-center space-x-8">
+      <div className="hidden lg:flex items-center space-x-10">
         {[{ name: 'Home', path: '/' }, { name: 'About', path: '/about' }, { name: 'Resume', path: '/resume' }, { name: 'Portfolio', path: '/portfolio' }, { name: 'Contact', path: '/contact' }].map((link) => (
           <Link key={link.name} href={link.path} passHref>
             <span
-              className={`cursor-pointer text-white hover:text-gray-400 hover:underline 
+              className={`cursor-pointer text-lg font-semibold hover:text-gray-400 hover:underline 
               ${pathname === link.path ? 'underline text-gray-500' : 'text-white'}`}
             >
               {link.name}
@@ -41,7 +41,7 @@ export default function Navbar() {
         ))}
 
         {/* Desktop Social Media Links */}
-        <div className="flex items-center space-x-4">
+        <div className="flex items-center space-x-6">
           {[{ href: 'https://www.instagram.com/_bernav_', src: '/instagram-icon.png', alt: 'Instagram' },
             { href: 'https://www.facebook.com/bernabas.getachew.5', src: '/facebook-icon.png', alt: 'Facebook' },
             { href: 'https://www.linkedin.com/in/bernabas-getachew-7299542a9', src: '/linkedin-icon.png', alt: 'LinkedIn' },
@@ -62,7 +62,7 @@ export default function Navbar() {
 
       {/* Mobile Sidebar */}
       {isMenuOpen && (
-        <div className="fixed top-0 right-0 h-full w-3/4 bg-black bg-opacity-90 text-white p-6 z-50 shadow-lg">
+        <div className="fixed top-0 right-0 h-full w-3/4 bg-black bg-opacity-15 text-white p-6 z-50 shadow-lg">
           <button
             className="absolute top-4 right-4 text-white focus:outline-none"
             onClick={() => setIsMenuOpen(false)}
@@ -71,12 +71,12 @@ export default function Navbar() {
           </button>
 
           {/* Navigation Links */}
-          <div className="space-y-6 mt-12">
+          <div className="space-y-8 mt-12">
             {[{ name: 'Home', path: '/' }, { name: 'About', path: '/about' }, { name: 'Resume', path: '/resume' }, { name: 'Portfolio', path: '/portfolio' }, { name: 'Contact', path: '/contact' }].map((link) => (
               <Link key={link.name} href={link.path} passHref>
                 <span
-                  className={`block text-lg cursor-pointer text-white hover:text-gray-400 hover:underline 
-                  ${pathname === link.path ? 'underline text-gray-500' : 'text-white'}`}
+                  className={`block text-xl font-medium tracking-wide text-center py-2 border-b border-gray-700 
+                  ${pathname === link.path ? 'underline text-gray-500' : 'text-white'} hover:text-gray-400`}
                 >
                   {link.name}
                 </span>
@@ -85,7 +85,7 @@ export default function Navbar() {
           </div>
 
           {/* Social Media Links */}
-          <div className="flex justify-center items-center space-x-4 mt-8">
+          <div className="flex justify-center items-center space-x-6 mt-12">
             {[{ href: 'https://www.instagram.com/_bernav_', src: '/instagram-icon.png', alt: 'Instagram' },
               { href: 'https://www.facebook.com/bernabas.getachew.5', src: '/facebook-icon.png', alt: 'Facebook' },
               { href: 'https://www.linkedin.com/in/bernabas-getachew-7299542a9', src: '/linkedin-icon.png', alt: 'LinkedIn' },
@@ -98,7 +98,7 @@ export default function Navbar() {
                 rel="noopener noreferrer"
                 className="hover:text-gray-400 transition duration-300"
               >
-                <img src={social.src} alt={social.alt} className="w-6 h-6" loading="lazy" />
+                <img src={social.src} alt={social.alt} className="w-8 h-8" loading="lazy" />
               </a>
             ))}
           </div>
