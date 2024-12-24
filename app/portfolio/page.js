@@ -14,12 +14,11 @@ export default function Portfolio() {
           </p>
         </section>
         <section className="text-center mb-8">
-        <p className="text-lg sm:text-xl text-gray-200 italic text-center bg-gray-900 p-4 sm:p-6 rounded-lg shadow-lg max-w-3xl mx-auto">
-          <b>"Click on the <span className="text-blue-500">E-commerce</span> and{' '}
-          <span className="text-blue-500">Hotel-Booking</span> images to explore the GitHub repositories. The other two are collaborative school projects with my talented teammates!"
-          </b>
-        </p>
-
+          <p className="text-lg sm:text-xl text-gray-200 italic text-center bg-gray-900 p-4 sm:p-6 rounded-lg shadow-lg max-w-3xl mx-auto">
+            <b>"Click on the <span className="text-blue-500">E-commerce</span> and{' '}
+            <span className="text-blue-500">Hotel-Booking</span> images to explore the GitHub repositories. The other two are collaborative school projects with my talented teammates!"
+            </b>
+          </p>
         </section>
 
         {/* Projects Section */}
@@ -28,11 +27,11 @@ export default function Portfolio() {
           <div className="relative flex flex-col items-center justify-center overflow-hidden">
             <a href="https://github.com/bernabasgetachew/E-commerce-website.git" target="_blank" rel="noopener noreferrer">
               <Image
-                src="/e-commerce.webp" // Replace with your image path
+                src="/e-commerce.webp"
                 alt="E-Commerce App"
                 width={400}
                 height={300}
-                className="rounded-lg shadow-lg transform transition-transform duration-500 hover:scale-110 hover:translate-x-4 hover:translate-y-4"
+                className="project-image"
               />
             </a>
             <div className="mt-4 text-center">
@@ -44,29 +43,27 @@ export default function Portfolio() {
           <div className="relative flex flex-col items-center justify-center overflow-hidden">
             <a href="https://github.com/bernabasgetachew/Hotel-Booking.git" target="_blank" rel="noopener noreferrer">
               <Image
-                src="/hotel.webp" // Replace with your image path
+                src="/hotel.webp"
                 alt="Hotel Booking App"
                 width={400}
-                height={500} // Adjusted height for proper alignment
-                className="rounded-lg shadow-lg transform transition-transform duration-500 hover:scale-110 hover:translate-x-4 hover:translate-y-4"
+                height={500}
+                className="project-image"
               />
             </a>
             <div className="mt-4 text-center">
-              <span className="text-white text-xl sm:text-2xl font-bold">Hotel Booking website</span>
+              <span className="text-white text-xl sm:text-2xl font-bold">Hotel Booking Website</span>
             </div>
           </div>
 
           {/* Project 3: Hospital Management */}
           <div className="relative flex flex-col items-center justify-center overflow-hidden">
-            
-              <Image
-                src="/hospital_management.jpg" // Replace with your image path
-                alt="Hospital Management"
-                width={400}
-                height={300}
-                className="rounded-lg shadow-lg transform transition-transform duration-500 hover:scale-110 hover:translate-x-4 hover:translate-y-4"
-              />
-            
+            <Image
+              src="/hospital_management.jpg"
+              alt="Hospital Management"
+              width={400}
+              height={300}
+              className="project-image"
+            />
             <div className="mt-4 text-center">
               <span className="text-white text-xl sm:text-2xl font-bold">Hospital Management</span>
             </div>
@@ -74,21 +71,31 @@ export default function Portfolio() {
 
           {/* Project 4: Social Event Planner */}
           <div className="relative flex flex-col items-center justify-center overflow-hidden">
-            
-              <Image
-                src="/event planner.webp" // Replace with your image path
-                alt="Social Event Planner"
-                width={400}
-                height={300}
-                className="rounded-lg shadow-lg transform transition-transform duration-500 hover:scale-110 hover:translate-x-4 hover:translate-y-4"
-              />
-            
+            <Image
+              src="/event planner.webp"
+              alt="Social Event Planner"
+              width={400}
+              height={300}
+              className="project-image"
+            />
             <div className="mt-4 text-center">
               <span className="text-white text-xl sm:text-2xl font-bold">Social Event Planner</span>
             </div>
           </div>
         </section>
       </main>
+      <style jsx>{`
+        .project-image {
+          border-radius: 0.5rem;
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+          transition: transform 0.5s ease-in-out;
+        }
+        @media (hover: hover) {
+          .project-image:hover {
+            transform: scale(1.1) translate(1rem, 1rem);
+          }
+        }
+      `}</style>
     </div>
   );
 }
