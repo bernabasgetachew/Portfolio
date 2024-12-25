@@ -100,18 +100,7 @@ export default function Resume() {
           </div>
         </section>
 
-        {/* Hobbies Section */}
-        <section className="mb-8 sm:mb-12">
-          <h2 className="text-3xl font-semibold mb-6">Hobbies</h2>
-          <ul className="space-y-4 sm:space-y-6 text-lg text-gray-200">
-            <li>
-              <strong className="text-gray-400">Football:</strong> Watching football inspires me with its teamwork and strategy.
-            </li>
-            <li>
-              <strong className="text-gray-400">Reading:</strong> I have a deep love for reading, especially books on technology and personal growth.
-            </li>
-          </ul>
-        </section>
+        
       </main>
     </div>
   );
