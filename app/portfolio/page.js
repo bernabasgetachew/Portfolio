@@ -5,9 +5,19 @@ import { useState } from 'react';
 
 export default function Portfolio() {
   const [activeProject, setActiveProject] = useState(null);
+  const [isAnimating, setIsAnimating] = useState(false);
 
   const handleToggle = (index) => {
-    setActiveProject(activeProject === index ? null : index);
+    if (!isAnimating) {
+      setActiveProject(index);
+      setIsAnimating(true);
+
+      // Reset animation after a short delay to allow the movement effect
+      setTimeout(() => {
+        setIsAnimating(false);
+        setActiveProject(null);
+      }, 300); // Adjust this value to match the animation duration
+    }
   };
 
   return (
@@ -65,8 +75,12 @@ export default function Portfolio() {
             <div
               key={index}
               className={`relative flex flex-col items-center justify-center overflow-hidden cursor-pointer transition-transform duration-500 ${
-                        activeProject === index ? 'scale-110 translate-y-4' : 'hover:scale-105 hover:translate-y-2'
-                        }`}
+                isAnimating
+                  ? 'scale-110 translate-y-4'
+                  : activeProject === index
+                  ? 'scale-110 translate-y-4'
+                  : 'hover:scale-105 hover:translate-y-2'
+              }`}
               onClick={() => handleToggle(index)}
             >
               <a href={project.link || '#'} target={project.link ? '_blank' : undefined} rel="noopener noreferrer">
