@@ -51,14 +51,14 @@ export default function Portfolio() {
               title: 'Hospital Management',
               imgSrc: '/hospital_management.jpg',
               overlayContent: (
-                <p className="text-white text-xl font-bold">{'Hospital Management'}</p>
+                <p className="text-white text-xl font-bold">{'School project'}</p>
               ),
             },
             {
               title: 'Social Event Planner',
               imgSrc: '/event planner.webp',
               overlayContent: (
-                <p className="text-white text-xl font-bold">{'Event Planner'}</p>
+                <p className="text-white text-xl font-bold">{'School Project'}</p>
               ),
             },
           ].map((project, index) => (
