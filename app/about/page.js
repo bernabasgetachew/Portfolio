@@ -7,7 +7,7 @@ export default function About() {
   ];
 
   const skills = [
-    { title: "Networking", description: "configuration using packet tracer along with hands-on experrience working with physical switches, routers and rack-mounted network equipment." },
+    { title: "Networking", description: "configuration using packet tracer along with hands-on experience working with physical switches, routers and rack-mounted network equipment." },
     { title: "Frontend Development", tools: "(HTML, CSS, React, JavaScript, Next.js)", description: "Building dynamic, user-friendly interfaces." },
     { title: "Backend Development", tools: "(Express, Python, C++, Java)", description: "Crafting robust server-side applications." },
     { title: "Databases", tools: "(MySQL, MongoDB)", description: "Managing and optimizing data for scalability and performance." },
@@ -29,7 +29,7 @@ export default function About() {
           <div className="flex flex-col justify-center">
             <h2 className="text-2xl sm:text-3xl font-semibold mb-4">Introduction</h2>
             <p className="text-sm sm:text-lg leading-relaxed mb-4">
-              My name is <span className="text-gray-400">Bernabas Getachew</span>, a 22-year-old full-stack developer and computer engineering student from Addis Ababa University. I was born on August 14, 2002, in Tefki, Ethiopia. I am deeply passionate about using technology to solve problems and create meaningful impacts.
+              My name is <span className="text-gray-400">Bernabas Getachew</span>, a 23-year-old full-stack developer and computer engineering student from Addis Ababa University. I was born on August 14, 2002, in Tefki, Ethiopia. I am deeply passionate about using technology to solve problems and create meaningful impacts.
             </p>
             <p className="text-sm sm:text-lg leading-relaxed">
               I believe in the power of <span className="font-bold text-gray-400">empathy, curiosity,</span> and <span className="font-bold text-gray-400">problem-solving</span> to drive innovation in every project I undertake.
