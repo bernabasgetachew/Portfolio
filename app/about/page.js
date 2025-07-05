@@ -2,12 +2,12 @@ import Image from 'next/image';
 
 export default function About() {
   const hobbies = [
-    { title: "Football", description: "Watching football inspires me with its teamwork and strategy." },
     { title: "Reading", description: "I have a deep love for reading, especially books on technology and personal growth." },
+    { title: "Family support", description: "Helping my family is the biggest thing that makes me happy." },
   ];
 
   const skills = [
-    { title: "Networking", description: "configuration using packet tracer alongwith hands-on experrience working with physical switches, routers and rack-mounted network equipment." },
+    { title: "Networking", description: "configuration using packet tracer along with hands-on experrience working with physical switches, routers and rack-mounted network equipment." },
     { title: "Frontend Development", tools: "(HTML, CSS, React, JavaScript, Next.js)", description: "Building dynamic, user-friendly interfaces." },
     { title: "Backend Development", tools: "(Express, Python, C++, Java)", description: "Crafting robust server-side applications." },
     { title: "Databases", tools: "(MySQL, MongoDB)", description: "Managing and optimizing data for scalability and performance." },
