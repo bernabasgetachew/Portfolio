@@ -13,7 +13,7 @@ export default function Home() {
           Hi, I'm <span className="text-gray-400">Bernabas Getachew</span>
         </h1>
         <h2 className="text-2xl sm:text-3xl font-medium mb-6">
-          A Full Stack Developer
+          A Computer Engineer and Full Stack Developer
         </h2>
         <p className="text-lg sm:text-xl font-semibold mb-4">
           I'm passionate about creating innovative solutions and constantly improving my skills!

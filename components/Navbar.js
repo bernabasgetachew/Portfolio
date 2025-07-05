@@ -44,7 +44,7 @@ export default function Navbar() {
         <div className="flex items-center space-x-6">
           {[{ href: 'https://www.instagram.com/_bernav_', src: '/instagram-icon.png', alt: 'Instagram' },
             { href: 'https://www.facebook.com/bernabas.getachew.5', src: '/facebook-icon.png', alt: 'Facebook' },
-            { href: 'https://www.linkedin.com/in/bernabas-getachew-7299542a9', src: '/linkedin-icon.png', alt: 'LinkedIn' },
+            { href: 'https://www.linkedin.com/in/bernabas-getachew-4b186334b', src: '/linkedin-icon.png', alt: 'LinkedIn' },
             { href: 'https://t.me/bernavv', src: '/telegram-icon.png', alt: 'Telegram' },
             { href: 'https://github.com/bernabasgetachew', src: '/github-icon.png', alt: 'GitHub' }].map((social) => (
             <a
@@ -62,6 +62,8 @@ export default function Navbar() {
 
       {/* Mobile Sidebar */}
       {isMenuOpen && (
+        <div className="fixed inset-0 z-40">
+          <div className="absolute inset-0 bg-black bg-opacity-30" onClick={() => setIsMenuOpen(false)} />
         <div className="fixed top-0 right-0 h-full w-3/4 bg-gray-800 bg-opacity-90 border-r border-gray-700 text-white p-6 z-50 shadow-lg">
           <button
             className="absolute top-4 right-4 text-white focus:outline-none"
@@ -88,7 +90,7 @@ export default function Navbar() {
           <div className="flex justify-center items-center space-x-6 mt-12">
             {[{ href: 'https://www.instagram.com/_bernav_', src: '/instagram-icon.png', alt: 'Instagram' },
               { href: 'https://www.facebook.com/bernabas.getachew.5', src: '/facebook-icon.png', alt: 'Facebook' },
-              { href: 'https://www.linkedin.com/in/bernabas-getachew-7299542a9', src: '/linkedin-icon.png', alt: 'LinkedIn' },
+              { href: 'https://www.linkedin.com/in/bernabas-getachew-4b186334b', src: '/linkedin-icon.png', alt: 'LinkedIn' },
               { href: 'https://t.me/bernavv', src: '/telegram-icon.png', alt: 'Telegram' },
               { href: 'https://github.com/bernabasgetachew', src: '/github-icon.png', alt: 'GitHub' }].map((social) => (
               <a
@@ -102,6 +104,7 @@ export default function Navbar() {
               </a>
             ))}
           </div>
+        </div>
         </div>
       )}
     </nav>

@@ -32,8 +32,8 @@ export default function Portfolio() {
         </section>
         <section className="text-center mb-8">
           <p className="text-lg sm:text-xl text-gray-200 italic text-center bg-gray-900 p-4 sm:p-6 rounded-lg shadow-lg max-w-3xl mx-auto">
-            <b>"Click on the <span className="text-blue-500">E-commerce</span> and{' '}
-            <span className="text-blue-500">Hotel-Booking</span> images to explore the GitHub repositories. The other two are collaborative school projects with my talented teammates!"
+            <b>"Click on the <span className="text-blue-500">E-commerce,</span> {' '} <span className="text-blue-500">Hotel-Booking,</span> {' '} <span className="text-blue-500">Home-security</span> and{' '}
+            <span className="text-blue-500">Task-manager</span> images to explore the GitHub repositories. The other two are collaborative school projects with my talented teammates!"
             </b>
           </p>
         </section>
@@ -57,6 +57,23 @@ export default function Portfolio() {
                 <Image src="/github-logo.png" alt="GitHub Logo" width={50} height={50} />
               ),
             },
+            {
+              title: 'IoT-Based Smart Home security system with ESP32CAM and Flutter',
+              imgSrc: '/home.jpg',
+              link: 'https://github.com/bernabasgetachew/Home_security.git',
+              overlayContent: (
+                <Image src="/github-logo.png" alt="GitHub Logo" width={50} height={50} />
+              ),
+            },
+            {
+              title: 'Task manager React Native App',
+              imgSrc: '/task.jpg',
+              link: 'https://github.com/bernabasgetachew/Task_App.git',
+              overlayContent: (
+                <Image src="/github-logo.png" alt="GitHub Logo" width={50} height={50} />
+              ),
+            },
+            
             {
               title: 'Hospital Management',
               imgSrc: '/hospital_management.jpg',

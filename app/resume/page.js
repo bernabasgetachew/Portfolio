@@ -46,6 +46,11 @@ export default function Resume() {
           <ul className="space-y-6 text-lg text-gray-200">
             {[
               {
+                title: "Networking",
+                duration: "2023 - Present",
+                description: "Configuration using packet tracer,basic knowledge of Network installation as well as server administration.",
+              },
+              {
                 title: "Frontend Development",
                 duration: "2020 - Present",
                 description: "Building dynamic, user-friendly interfaces using modern web technologies like React and Next.js.",
@@ -80,6 +85,7 @@ export default function Resume() {
           <h2 className="text-3xl font-semibold mb-6">Skills</h2>
           <div className="space-y-6">
             {[
+              { skill: "Networking", percentage: 75 },
               { skill: "Frontend Development (HTML, CSS, JavaScript, React, Next.js)", percentage: 85 },
               { skill: "Backend Development (Node.js, Express, Next.js)", percentage: 70 },
               { skill: "Database Management (MySQL, MongoDB)", percentage: 90 },

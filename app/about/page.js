@@ -7,12 +7,12 @@ export default function About() {
   ];
 
   const skills = [
+    { title: "Networking", description: "configuration using packet tracer alongwith hands-on experrience working with physical switches, routers and rack-mounted network equipment." },
     { title: "Frontend Development", tools: "(HTML, CSS, React, JavaScript, Next.js)", description: "Building dynamic, user-friendly interfaces." },
     { title: "Backend Development", tools: "(Express, Python, C++, Java)", description: "Crafting robust server-side applications." },
     { title: "Databases", tools: "(MySQL, MongoDB)", description: "Managing and optimizing data for scalability and performance." },
     { title: "IoT Projects", description: "Creating innovative connected solutions with microcontrollers and sensors." },
   ];
-
   return (
     <div className="bg-gradient-to-r from-black to-gray-800 text-white min-h-screen">
       <main className="max-w-7xl mx-auto p-6 sm:p-8 pt-24 mt-20"> {/* Added pt-24 to ensure content appears below the navbar */}
